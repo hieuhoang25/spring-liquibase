@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - preConditions:
+      - onFail: CONTINUE
+      - onError: CONTINUE
+  - changeSet:
+      id: v_1_1
+      author: hoangit
+      failOnError: true
+      changes:
+        - sql: |
+            CREATE TABLE tbl_author (
+              id SERIAL PRIMARY KEY,
+              name VARCHAR(255),
+              email VARCHAR(255)
+            )

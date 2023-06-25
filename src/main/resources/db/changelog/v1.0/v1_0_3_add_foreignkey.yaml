@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - preConditions:
+      - onFail: CONTINUE
+      - onError: CONTINUE
+  - changeSet:
+      id: v_0_3
+      author: hicode
+      failOnError: true
+      changes:
+        - sql: |
+            ALTER TABLE tbl_book 
+            ADD CONSTRAINT constraint_name
+            FOREIGN KEY (author_id)
+            REFERENCES tbl_author (id);
